@@ -1,9 +1,12 @@
+import 'package:button/layout/IconPage.dart';
 import 'package:button/layout/demo.dart';
 import 'package:button/layout/get_started_page.dart';
 import 'package:button/layout/login_page.dart';
 import 'package:button/layout/page1.dart';
 import 'package:button/layout/signup_page.dart';
 import 'package:flutter/material.dart';
+
+import 'layout/dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,10 +37,16 @@ class MyApp extends StatelessWidget {
 
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       // home: const Homepage2(),
+initialRoute:  '/',
+routes: {
+  '/':(context)=> const StartedPade(),
+  '/ first':((context) => DashBoard())
 
+},
       /*Login Ui pages */
-        home: const StartedPade(),  // first Page
-    //  home: const LoginPage(),   // Login page
+        // home:  StartedPade(),  // first Page
+    // home: const LoginPage(),   // Login page
+      // home: const IconPage(),   // Login page
    // home: const Signup(),   // Login page
     );
   }

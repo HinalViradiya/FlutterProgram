@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:button/layout/dashboard.dart';
 import 'package:button/layout/login_page.dart';
@@ -110,10 +110,10 @@ class _SignupState extends State<Signup> {
             ),
           ),
           Padding(
-              padding: EdgeInsets.only(top: 20.0, bottom: 15.0),
+              padding: const EdgeInsets.only(top: 20.0, bottom: 15.0),
               child: Text.rich(TextSpan(
                   text: "Already have an account? ",
-                  style: TextStyle(color: Color.fromARGB(199, 89, 93, 93)),
+                  style: const TextStyle(color: Color.fromARGB(199, 89, 93, 93)),
                   children: <TextSpan>[
                     TextSpan(
                       text: "Log In",

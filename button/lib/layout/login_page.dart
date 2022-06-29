@@ -1,6 +1,5 @@
 import 'dart:html';
 
-import 'package:button/layout/dashboard.dart';
 import 'package:button/layout/signup_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +16,11 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     drawer: Drawer(
+
+     ),
+      appBar: AppBar(),
+
       body: Column(
         children: [
           Row(
@@ -71,20 +75,20 @@ class _LoginPageState extends State<LoginPage> {
                             ? Icons.visibility
                             : Icons.visibility_off)))),
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-            TextButton(
-              style: TextButton.styleFrom(
-                textStyle: const TextStyle(
-                    fontSize: 16,
-                    decorationColor: Color.fromARGB(200, 112, 122, 122),
-                    fontWeight: FontWeight.bold),
-              ),
-              onPressed: () {
-                print("Forgot Password Clicked");
-              },
-              child: const Text('Forgot Password?'),
-            )
-          ]),
+          Container(
+              alignment: Alignment.topRight,
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: const TextStyle(
+                      fontSize: 16,
+                      decorationColor: Color.fromARGB(200, 112, 122, 122),
+                      fontWeight: FontWeight.bold),
+                ),
+                onPressed: () {
+                  print("Forgot Password Clicked");
+                },
+                child: const Text('Forgot Password?'),
+              )),
           Padding(
             padding: const EdgeInsets.only(top: 50.0, right: 15.0, left: 15.0),
             child: ElevatedButton(
@@ -94,8 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                   textStyle: const TextStyle(fontSize: 17, color: Colors.black),
                   minimumSize: const Size.fromHeight(50.0)),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const DashBoard()));
+               Navigator.pushNamed(context,  '/ first');
               },
               child: const Text("Log In"),
             ),
@@ -162,7 +165,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 RawMaterialButton(
                   key: const Key("btnGoogle"),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context);
+                  },
                   elevation: 2.0,
                   fillColor: const Color.fromARGB(255, 6, 167, 189),
                   splashColor: const Color.fromARGB(255, 96, 214, 229),
@@ -176,7 +181,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
-          )
+          ),
+          IconButton(onPressed: (){
+            Navigator.pop(context);
+          }, icon:Icon(Icons.person))
         ],
       ),
     );
