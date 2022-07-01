@@ -1,9 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application1/dash_board.dart';
-import 'package:flutter_application1/ui/app_page.dart';
-import 'package:flutter_application1/ui/movie_page.dart';
-import 'package:flutter_application1/ui/music_page.dart';
-import 'package:flutter_application1/ui/shopping_page.dart';
+import 'package:vestimate/ui/home/get_started_screen.dart';
+import 'package:vestimate/ui/home/home_screen.dart';
+import 'package:vestimate/ui/home/search_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,28 +15,51 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primaryColor: Color.fromARGB(255, 86, 32, 162),
-        ),
-        // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+       scrollBehavior: MyCustomScrollBehavior(),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.blue,
+      ),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const HomeScreen(),
 
-        initialRoute: '/',
+       initialRoute: '/',
         routes: {
-          '/': (context) => const DashBoard(),
-          '/ MusicPage': (context) => const MusicPage(),
-          '/ MoviePage': (context) => const MoviePage(),
-          '/ ShoppingPage': (context) => const ShoppingPage(),
-          '/ AppPage': (context) => const AppPage(),
+          '/ HomePage': (context) => const HomeScreen(),
+          '/ SearchPage': (context) => const SearchPage(),
         }
-
-        // home: const DashBoard(),
-        );
+    );
   }
 }
 
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  // Override behavior methods and getters like dragDevices
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
+}
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked "final".
 
   final String title;
 
@@ -50,6 +72,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }

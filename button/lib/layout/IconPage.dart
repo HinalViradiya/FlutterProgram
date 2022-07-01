@@ -15,7 +15,7 @@ class _IconPageState extends State<IconPage> {
       children:const  <Widget>[
         Icon(Icons.directions_transit, size: 70, color: Colors.green),
         Text("Train"),
-        Icon(Icons.accessibility_new,color: Colors.pink,size:40.0,semanticLabel: "Text  to announce in accessiblility modes",)
+        Icon(Icons.accessibility_new,color: Colors.pink,size:40.0,semanticLabel: "Text to announce in accessiblility modes",)
       ],
     ));
   }

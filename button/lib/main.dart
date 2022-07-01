@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
 initialRoute:  '/',
 routes: {
   '/':(context)=> const StartedPade(),
-  '/ first':((context) => DashBoard())
+  '/ first':((context) =>const  DashBoard())
 
 },
       /*Login Ui pages */
