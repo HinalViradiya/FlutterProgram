@@ -17,7 +17,7 @@ class _DashBoardState extends State<DashBoard> {
       body : Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-         Center(child: const Text("WelCome to the Application",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),)),
+         const Center(child: const Text("WelCome to the Application",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),)),
         ],
       )
     );

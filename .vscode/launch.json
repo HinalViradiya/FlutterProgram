@@ -1,0 +1,168 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "button",
+            "cwd": "button",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "button (profile mode)",
+            "cwd": "button",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "button (release mode)",
+            "cwd": "button",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "fabcurate",
+            "cwd": "fabcurate",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "fabcurate (profile mode)",
+            "cwd": "fabcurate",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "fabcurate (release mode)",
+            "cwd": "fabcurate",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flutter_application1",
+            "cwd": "flutter_application1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutter_application1 (profile mode)",
+            "cwd": "flutter_application1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flutter_application1 (release mode)",
+            "cwd": "flutter_application1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "hello_word",
+            "cwd": "hello_word",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "hello_word (profile mode)",
+            "cwd": "hello_word",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "hello_word (release mode)",
+            "cwd": "hello_word",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "listview",
+            "cwd": "listview",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "listview (profile mode)",
+            "cwd": "listview",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "listview (release mode)",
+            "cwd": "listview",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "scaffold_widget",
+            "cwd": "scaffold_widget",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "scaffold_widget (profile mode)",
+            "cwd": "scaffold_widget",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "scaffold_widget (release mode)",
+            "cwd": "scaffold_widget",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "ui_app",
+            "cwd": "ui_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ui_app (profile mode)",
+            "cwd": "ui_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ui_app (release mode)",
+            "cwd": "ui_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "vestimate",
+            "cwd": "vestimate",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "vestimate (profile mode)",
+            "cwd": "vestimate",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "vestimate (release mode)",
+            "cwd": "vestimate",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
