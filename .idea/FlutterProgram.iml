@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/instagram_ui/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram_ui/build" />
+      <excludeFolder url="file://$MODULE_DIR$/instagram_ui/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/listview/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/listview/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/listview/build" />
+      <excludeFolder url="file://$MODULE_DIR$/button/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/button/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/button/build" />
+      <excludeFolder url="file://$MODULE_DIR$/grocerymart/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/grocerymart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/grocerymart/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/fabcurate/build" />
+      <excludeFolder url="file://$MODULE_DIR$/fabcurate/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/fabcurate/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/vestimate/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/vestimate/build" />
+      <excludeFolder url="file://$MODULE_DIR$/vestimate/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ui_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ui_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ui_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application1/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application1/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application1/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scaffold_widget/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scaffold_widget/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/scaffold_widget/build" />
+      <excludeFolder url="file://$MODULE_DIR$/hello_word/build" />
+      <excludeFolder url="file://$MODULE_DIR$/hello_word/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/hello_word/.pub" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>
