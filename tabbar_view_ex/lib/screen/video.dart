@@ -32,7 +32,7 @@ class _VideoPageState extends State<VideoPage> {
           label: "Camera",
           icon: Icon(Icons.camera),
         ),
-  BottomNavigationBarItem(
+        BottomNavigationBarItem(
           label: "Map",
           icon: Icon(Icons.map),
         ), BottomNavigationBarItem(
