@@ -236,20 +236,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-           
-             Container(
+            Container(
                 height: 250,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: imagesList.length,
                   shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
-                    return  Card(
+                    return Card(
                       color: Colors.white,                      
                       child: Image.asset(imagesList[index], fit: BoxFit.cover),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        
+                        borderRadius: BorderRadius.circular(10.0),                        
                       ),
                       elevation: 5,
                       margin: EdgeInsets.all(10));

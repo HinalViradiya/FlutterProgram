@@ -24,7 +24,10 @@ class MusicTab extends StatelessWidget {
                const Spacer(),
                 TextButton(onPressed: (){}, child:const  Text("MORE",style: TextStyle(fontSize: 15),),)
               ],
-            ),            
+            ),    
+            Container(
+              
+            )       
           ],
         ),
       ),
