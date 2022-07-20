@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_indicator/carousel_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -252,8 +253,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       elevation: 5,
                       margin: EdgeInsets.all(10));
                   }
-                 
-                 
                 ),
               ),
           

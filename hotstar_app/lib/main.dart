@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotstar_app/screen/home_page.dart';
+import 'package:hotstar_app/screen/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark, 
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }
