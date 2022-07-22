@@ -46,28 +46,31 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                     });
                   }))*/
           CarouselSlider(
+            
               items: listPaths.map((i) {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
                         width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 5.0),
-                        decoration: BoxDecoration(color: Colors.white),
+                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: const BoxDecoration(color: Colors.white),
                         child: Image.asset(i)
-
                         //AssetImage("assets/images/launcher.jpg"),
-
                         );
                   },
                 );
               }).toList(),
+              
               options: CarouselOptions(
                   height: height,
                   autoPlay: true,
                   viewportFraction: 1.0,
                   onPageChanged: (index, reason) {
-                    setState(() {});
-                  })),
+                    setState(() {
+                      currentPos = index;
+                    });
+                  }),
+              ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Row(

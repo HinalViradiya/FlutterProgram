@@ -11,6 +11,9 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  static const routeName = '/SplashPage';
+  
   @override
   void initState() {
     super.initState();

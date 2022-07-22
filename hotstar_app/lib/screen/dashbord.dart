@@ -12,6 +12,8 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  static const routeName = '/DashBoardPage';
+  
   int _selectedIndex = 0;
     bool _switch = false;
     final List<Widget> _tabs =[const HomePage(),const TVPage(),const MoviePage(),const GallerySubPage()];

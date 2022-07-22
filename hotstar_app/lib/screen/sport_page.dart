@@ -9,6 +9,8 @@ class SportPage extends StatefulWidget {
 }
 
 class _SportPageState extends State<SportPage> {
+  static const routeName = '/SportPage';
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -32,6 +32,8 @@ List<Map<String, dynamic>> _postList = [
 ];
 
 class _TVPageState extends State<TVPage> {
+  static const routeName = '/TvPage';
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

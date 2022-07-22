@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotstar_app/screen/detail_page.dart';
 import 'package:hotstar_app/screen/splash.dart';
 
 void main() {
@@ -20,6 +21,12 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark, 
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
+
+
+      routes:  
+     {
+        DetailPage.routeName: (context) => DetailPage(),
+    },
     );
   }
 }

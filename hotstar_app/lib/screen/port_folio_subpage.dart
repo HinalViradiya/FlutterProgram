@@ -17,6 +17,8 @@ List<Map<String, dynamic>> imagePathsSnapshot = [
 
 class GallerySubPage extends StatelessWidget {
   const GallerySubPage({Key? key}) : super(key: key);
+  static const routeName = '/GallerySubPage';
+  
 
 
  Future<List<String>> _loadImagePaths(BuildContext context) async {
@@ -33,6 +35,7 @@ class GallerySubPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return FutureBuilder(
       future: _loadImagePaths(context),
       builder: (

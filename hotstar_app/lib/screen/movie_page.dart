@@ -10,6 +10,8 @@ class MoviePage extends StatefulWidget {
 }
 
 class _MoviePageState extends State<MoviePage> {
+  static const routeName = '/MoviePage';
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

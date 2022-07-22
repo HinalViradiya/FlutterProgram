@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+   static const routeName = '/HomePage';
+  
   int _selectedIndex = 0;
   final List<String> _imagesList = [
     "assets/images/1.jpeg",
@@ -31,6 +33,7 @@ class _HomePageState extends State<HomePage> {
     "assets/hollywood/peak.jpg",
     "assets/hollywood/rogue.jpg",
     "assets/hollywood/thor.jpg",
+    
     "assets/hollywood/train.jpg",
   ];
 
