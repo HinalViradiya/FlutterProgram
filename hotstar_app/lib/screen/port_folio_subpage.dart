@@ -16,8 +16,8 @@ List<Map<String, dynamic>> imagePathsSnapshot = [
 ];
 
 class GallerySubPage extends StatelessWidget {
-  const GallerySubPage({Key? key}) : super(key: key);
   static const routeName = '/GallerySubPage';
+  const GallerySubPage({Key? key}) : super(key: key);
   
 
 

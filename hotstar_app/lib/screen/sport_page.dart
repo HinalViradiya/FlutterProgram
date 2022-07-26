@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotstar_app/screen/port_folio_subpage.dart';
 
 class SportPage extends StatefulWidget {
+  static const routeName = '/SportPage';
   const SportPage({Key? key}) : super(key: key);
 
   @override
@@ -9,7 +10,6 @@ class SportPage extends StatefulWidget {
 }
 
 class _SportPageState extends State<SportPage> {
-  static const routeName = '/SportPage';
   
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TVPage extends StatefulWidget {
+  static const routeName = '/TvPage';
   const TVPage({Key? key}) : super(key: key);
 
   @override
@@ -32,7 +33,6 @@ List<Map<String, dynamic>> _postList = [
 ];
 
 class _TVPageState extends State<TVPage> {
-  static const routeName = '/TvPage';
   
   @override
   Widget build(BuildContext context) {

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hotstar_app/screen/Dashbord.dart';
 
 class SplashScreen extends StatefulWidget {
+  static const routeName = '/SplashPage';
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
@@ -12,7 +13,6 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  static const routeName = '/SplashPage';
   
   @override
   void initState() {

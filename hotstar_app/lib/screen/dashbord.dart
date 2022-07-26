@@ -5,6 +5,8 @@ import 'package:hotstar_app/screen/port_folio_subpage.dart';
 import 'package:hotstar_app/screen/tv_page.dart';
 
 class Dashboard extends StatefulWidget {
+  
+  static const routeName = '/DashBoardPage';
   const Dashboard({Key? key}) : super(key: key);
 
   @override
@@ -12,7 +14,6 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  static const routeName = '/DashBoardPage';
   
   int _selectedIndex = 0;
     bool _switch = false;
@@ -275,6 +276,10 @@ class _DashboardState extends State<Dashboard> {
         selectedItemColor: Color.fromARGB(255, 239, 236, 232),
         onTap: (index)=> setState(() {
           _selectedIndex =index;
+         // Navigator.pushNamed(context,DetailPage.routeName );
+
+
+           
         }),
       ),
    

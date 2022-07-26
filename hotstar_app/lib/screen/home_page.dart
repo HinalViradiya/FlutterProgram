@@ -1,7 +1,11 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:hotstar_app/model/Arguments.dart';
+import 'package:hotstar_app/screen/detail_page.dart';
 
 class HomePage extends StatefulWidget {
+  static const routeName = '/HomePage';
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -9,9 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   static const routeName = '/HomePage';
-  
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
   final List<String> _imagesList = [
     "assets/images/1.jpeg",
     "assets/images/2.jpeg",
@@ -33,8 +35,73 @@ class _HomePageState extends State<HomePage> {
     "assets/hollywood/peak.jpg",
     "assets/hollywood/rogue.jpg",
     "assets/hollywood/thor.jpg",
-    
     "assets/hollywood/train.jpg",
+  ];
+
+  final List<Map<String, dynamic>> _listMapMovie = [
+    {
+      "image": "assets/hollywood/dracula.jpg",
+      "name": "Dracula",
+      "video": "https://www.youtube.com/watch?v=_2aWqecTTuE",
+      "time": "1 hr 57 min",
+      "lang": "English"
+    },
+    {
+      "image": "assets/hollywood/gijoe.jpg",
+      "name": "Gijoe",
+      "video": "https://www.youtube.com/watch?v=_2aWqecTTuE",
+      "time": "2 hr 30 min",
+      "lang": "English,Hindi"
+    },
+    {
+      "image": "assets/hollywood/ironMan.jpg",
+      "name": "IronMan",
+      "video": "https://www.youtube.com/watch?v=8ugaeA-nMTc",
+      "time": "1 hr 00 min",
+      "lang": "English,Hindi"
+    },
+    {
+      "image": "assets/hollywood/major.jpg",
+      "name": "Major",
+      "video": "https://www.youtube.com/watch?v=PAv1Ke07QAM",
+      "time": "1 hr 00 min",
+      "lang": "English,Hindi"
+    },
+    {
+      "image": "assets/hollywood/mortal.jpg",
+      "name": "Mortal",
+      "video": "https://www.youtube.com/watch?v=PAv1Ke07QAM",
+      "time": "1 hr 00 min",
+      "lang": "Hindi"
+    },
+    {
+      "image": "assets/hollywood/peak.jpg",
+      "name": "Peak",
+      "video": "https://www.youtube.com/watch?v=PAv1Ke07QAM",
+      "time": "3 hr 10 min",
+      "lang": "English"
+    },
+    {
+      "image": "assets/hollywood/rogue.jpg",
+      "name": "Rogue",
+      "video":"https://www.youtube.com/watch?v=PAv1Ke07QAM",
+      "time": "2 hr 30 min",
+      "lang": "English,Hindi"
+    },
+    {
+      "image": "assets/hollywood/thor.jpg",
+      "name": "Thor",
+      "video":"https://www.youtube.com/watch?v=Go8nTmfrQd8",
+      "time": "2 hr 30 min",
+      "lang": "English,Hindi"
+    },
+    {
+      "image": "assets/hollywood/train.jpg",
+      "name": "Train",
+      "video":"https://www.youtube.com/watch?v=Go8nTmfrQd8",
+      "time": "3 hr 30 min",
+      "lang": "English,Hindi"
+    },
   ];
 
   final List<String> _listPost = [
@@ -45,7 +112,54 @@ class _HomePageState extends State<HomePage> {
     "assets/post/s5.jpg",
   ];
 
-  
+  final List<Map<String, dynamic>> _mapPost = [
+    {
+      "image": "assets/post/s1.jpg",
+      "name": "Ashiqina",
+      "vedio": "https://www.hotstar.com/in/aashiqana-trailer/1260104508",
+      "time": "1 hr 57 min",
+      "lang": "Hindi"
+    },
+    {
+      "image": "assets/post/s2.jpg",
+      "name": "Once upon a Time",
+      "vedio": "https://www.youtube.com/watch?v=29217uc7fOo",
+      "time": "3 hr 05 min",
+      "lang": "English"
+    },
+    {
+      "image": "assets/post/s3.jpg",
+      "name": "DareDevil Marvel",
+      "vedio": "https://www.youtube.com/watch?v=jAy6NJ_D5vU",
+      "time": "2 hr 30 min",
+      "lang": "English,Hindi"
+    },
+    {
+      "image": "assets/post/s4.jpg",
+      "name": "The Maze Runner",
+      "vedio": "https://www.youtube.com/watch?v=AwwbhhjQ9Xk",
+      "time": "2 hr 45 min",
+      "lang": "English"
+    },
+    {
+      "image": "assets/post/s5.jpg",
+      "name": "Beauty And The Beast 4K",
+      "vedio": "https://www.youtube.com/watch?v=e3Nl_TCQXuw",
+      "time": "3 hr 30 min",
+      "lang": "English,Hindi"
+    }
+  ];
+
+  /*
+{"image": "assets/post/s1.jpg",
+"name":"Beauty And The Beast 4K",
+"vedio":"https://www.youtube.com/watch?v=e3Nl_TCQXuw"},
+
+
+
+
+
+*/
 
   @override
   Widget build(BuildContext context) {
@@ -302,25 +416,32 @@ class _HomePageState extends State<HomePage> {
                 enableInfiniteScroll: true,
                 reverse: false,
                 autoPlay: true,
-                autoPlayInterval: Duration(seconds: 3),
-                autoPlayAnimationDuration: Duration(milliseconds: 700),
+                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(milliseconds: 700),
                 autoPlayCurve: Curves.fastOutSlowIn,
                 //  enlargeCenterPage: true,
                 scrollDirection: Axis.horizontal,
               ),
-              items: _listPost.map((i) {
+              items: _mapPost.map((i) {
                 return Builder(
                   builder: (BuildContext context) {
-                    return Container(
-                        width: MediaQuery.of(context).size.width,
-
-                        // margin: EdgeInsets.symmetric(horizontal: 5.0),
-                        // decoration: BoxDecoration(color: Colors.white),
-                        child: Image.asset(i, fit: BoxFit.fill)
-
-                        //AssetImage("assets/images/launcher.jpg"),
-
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          DetailPage.routeName,
+                          arguments: Arguments(i["name"], i["image"],
+                              i["vedio"], i["time"], i["lang"]),
                         );
+                      },
+                      child: SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          // margin: EdgeInsets.symmetric(horizontal: 5.0),
+                          // decoration: BoxDecoration(color: Colors.white),
+                          child: Image.asset(i["image"], fit: BoxFit.fill)
+                          //AssetImage("assets/images/launcher.jpg"),
+                          ),
+                    );
                   },
                 );
               }).toList(),
@@ -379,19 +500,29 @@ class _HomePageState extends State<HomePage> {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
-                itemCount: _listLatestWallpaper.length,
+                itemCount: _listMapMovie.length,
                 separatorBuilder: (BuildContext context, int index) =>
                     const SizedBox(
                   width: 6,
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    width: width * 0.30,
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(7),
-                        child: Image(
-                            image: AssetImage(_listLatestWallpaper[index]),
-                            fit: BoxFit.cover)),
+                  return InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        DetailPage.routeName,
+                        arguments: Arguments(_listMapMovie[index]["name"],
+                            _listMapMovie[index]["image"], _listMapMovie[index]["video"],_listMapMovie[index]["time"], _listMapMovie[index]["lang"]),
+                      );
+                    },
+                    child: SizedBox(
+                      width: width * 0.30,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(7),
+                          child: Image(
+                              image: AssetImage(_listMapMovie[index]["image"]),
+                              fit: BoxFit.cover)),
+                    ),
                   );
                 },
               ),
@@ -417,7 +548,7 @@ class _HomePageState extends State<HomePage> {
                     width: 6,
                   ),
                   itemBuilder: (BuildContext context, int index) {
-                    return  SizedBox(
+                    return SizedBox(
                       width: width * 0.30,
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(7),
@@ -432,8 +563,8 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-     
-     /*  bottomNavigationBar: BottomNavigationBar(
+
+      /*  bottomNavigationBar: BottomNavigationBar(
         iconSize: 20,       
         items:const   <BottomNavigationBarItem>[
            BottomNavigationBarItem(
