@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotstar_app/detailScreen/youtube.dart';
+import 'package:hotstar_app/detailScreen/video_player.dart';
 import 'package:hotstar_app/screen/dashbord.dart';
 import 'package:hotstar_app/screen/detail_page.dart';
 import 'package:hotstar_app/screen/home_page.dart';
@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',  
       routes:  
      {
-       '/': (context) => const YoutubeVideoScreen(),
-        DetailPage.routeName: (context) => const DetailPage(),
+       '/': (context) => const Dashboard(),
+        //DetailPage.routeName: (context) => const DetailPage(),
         Dashboard.routeName: (context) => const Dashboard(),       
         HomePage.routeName: (context) => const HomePage(),
         MoviePage.routeName: (context) => const MoviePage(),
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
         SplashScreen.routeName: (context) => const SplashScreen(),
         SportPage.routeName: (context) => const SportPage(),
         TVPage.routeName: (context) => const TVPage(),
+        VideoPlayerPage.routeName: (context) => const VideoPlayerPage(),
     },
     );
   }

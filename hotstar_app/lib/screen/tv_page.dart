@@ -8,17 +8,6 @@ class TVPage extends StatefulWidget {
   State<TVPage> createState() => _TVPageState();
 }
 
-List<String> _listWebSeries = [
-  "assets/hollywood/dracula.jpg",
-  "assets/hollywood/gijoe.jpg",
-  "assets/hollywood/ironMan.jpg",
-  "assets/hollywood/major.jpg",
-  "assets/hollywood/mortal.jpg",
-  "assets/hollywood/peak.jpg",
-  "assets/hollywood/rogue.jpg",
-  "assets/hollywood/thor.jpg",
-  "assets/hollywood/train.jpg",
-];
 
 List<Map<String, dynamic>> _postList = [
   {"image": "assets/hollywood/dracula.jpg", "text": "Dracula"},

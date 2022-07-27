@@ -1,11 +1,15 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hotstar_app/model/Arguments.dart';
-import 'package:video_player/video_player.dart';
+import 'package:hotstar_app/model/arguments.dart';
+import 'package:hotstar_app/model/datamodel.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class DetailPage extends StatefulWidget {
   static const routeName = '/DetailPage';
-  const DetailPage({Key? key}) : super(key: key);
+  const DetailPage({Key? key, required this.user}) : super(key: key);
+  final User user;
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -36,32 +40,40 @@ final List<String> _imagesList = [
 ];
 
 class _DetailPageState extends State<DetailPage> {
-  late VideoPlayerController _controller;
+  late YoutubePlayerController controller;
+  List<User> items = [];
 
   String text = "";
   String videoLink = "";
 
   @override
   void initState() {
-    super.initState();
-    _controller = VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4')
-      ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        setState(() {});
+   // items = UserList.getUserDetails();
+
+    String videoLink = widget.user.image!;
+
+    print("Data Update Detail Page");
+    print(videoLink);
+
+
+    videoLink="https://www.youtube.com/watch?v=bd3JmlIxQXM";
+    YoutubePlayer.convertUrlToId(videoLink);
+    controller = YoutubePlayerController(
+      initialVideoId: videoLink,
+      flags: const YoutubePlayerFlags(
+          mute: false, loop: false, autoPlay: true, hideControls: false),
+    )..addListener(() {
+        if (mounted) {
+          setState(() {});
+        }
       });
+    super.initState();
   }
 
-  // @override
-  // void dispose() {
-  //   _controller.dispose();
-  //   super.dispose();
-  // }
-
-   @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
+  @override
+  void deactivate() {
+    controller.pause();
+    super.deactivate();
   }
 
   @override
@@ -76,7 +88,6 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       appBar: AppBar(
         systemOverlayStyle: const SystemUiOverlayStyle(
-          // statusBarColor: Colors., // <-- SEE HERE
           statusBarIconBrightness:
               Brightness.dark, //<-- For Android SEE HERE (dark icons)
           statusBarBrightness:
@@ -103,38 +114,34 @@ class _DetailPageState extends State<DetailPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: _controller.value.isInitialized
-                  ? AspectRatio(
-                      aspectRatio: _controller.value.aspectRatio,
-                      child: VideoPlayer(_controller),
-                    )
-                  : Container(),
-            ),
-            FloatingActionButton(
-              onPressed: () {
-                setState(() {
-                  _controller.value.isPlaying
-                      ? _controller.pause()
-                      : _controller.play();
-                });
-              },
-              child: Icon(
-                _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+            SizedBox(
+              height: height * 0.40,
+              width: width,
+              child: YoutubePlayerBuilder(
+                player: YoutubePlayer(
+                  controller: controller,
+                  showVideoProgressIndicator: true,
+                ),
+                builder: (context, player) => Scaffold(
+                  appBar: AppBar(title: const Text("Youtube Player")),
+                  body: ListView(
+                    children: [
+                      player,
+                      Text(controller.metadata.title),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                      Text(controller.metadata.author),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                      Text(
+                          '${controller.metadata.duration.inSeconds}  Seconds'),
+                    ],
+                  ),
+                ),
               ),
             ),
-            //  Stack(
-            //     alignment: Alignment.bottomCenter,
-            //     children: <Widget>[
-            //       VideoPlayer(_controller),
-            //       ClosedCaption(text: _controller.value.caption.text),
-            //       VideoProgressIndicator(_controller, allowScrubbing: true),
-            //     ],
-            //   ),
-            // SizedBox(
-            //     width: MediaQuery.of(context).size.width,
-            //     child: Image.asset(args.image, fit: BoxFit.fill)),
-
             Container(
               color: const Color.fromARGB(255, 39, 38, 38),
               padding: const EdgeInsets.all(5.0),

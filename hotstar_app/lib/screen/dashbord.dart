@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hotstar_app/model/datamodel.dart';
+import 'package:hotstar_app/model/userlist.dart';
 import 'package:hotstar_app/screen/home_page.dart';
 import 'package:hotstar_app/screen/movie_page.dart';
 import 'package:hotstar_app/screen/port_folio_subpage.dart';
@@ -14,10 +16,18 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  
+   
   int _selectedIndex = 0;
     bool _switch = false;
+    List<User> items = UserList.getUserDetails();
+
     final List<Widget> _tabs =[const HomePage(),const TVPage(),const MoviePage(),const GallerySubPage()];
+   
+    @override
+    void initState() {   
+        super.initState();
+    }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -251,7 +261,7 @@ class _DashboardState extends State<Dashboard> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         iconSize: 20,       
-        items:const   <BottomNavigationBarItem>[
+        items:const <BottomNavigationBarItem>[
            BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -273,13 +283,10 @@ class _DashboardState extends State<Dashboard> {
         type: BottomNavigationBarType.shifting, // default is shifting (fixed)
        // elevation: 4,
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Color.fromARGB(255, 239, 236, 232),
+        selectedItemColor: const Color.fromARGB(255, 239, 236, 232),
         onTap: (index)=> setState(() {
           _selectedIndex =index;
-         // Navigator.pushNamed(context,DetailPage.routeName );
-
-
-           
+         // Navigator.pushNamed(context,DetailPage.routeName );           
         }),
       ),
    

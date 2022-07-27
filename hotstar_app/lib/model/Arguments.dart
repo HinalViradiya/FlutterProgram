@@ -1,3 +1,4 @@
+// ignore: file_names
 class Arguments {
   final String title;
   final String image;
